@@ -8,7 +8,7 @@
 
 5. modifier defines reusable code that can be applied to functions.
 
-6.nonReentrant from ReentrancyGuard prevents reentrancy attacks.means protecting from calling the function multiple times before the initial execution is completed
+6. nonReentrant from ReentrancyGuard prevents reentrancy attacks.means protecting from calling the function multiple times before the initial execution is completed
 
 7. memory means temporarily stored in memory but stored means storing it permanently in the blockchain
 
