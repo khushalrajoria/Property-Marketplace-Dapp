@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Property Marketplace</h1>
+        <nav>
+            <a href="#list-property" onclick="showPage('list-property')">List Property</a>
+            <a href="#buy-property" onclick="showPage('buy-property')">Buy Property</a>
+            <a href="#sell-property" onclick="showPage('sell-property')">Sell Property</a>
+            <a href="#buy-stake" onclick="showPage('buy-stake')">Buy Stake</a>
+            <a href="#sell-stake" onclick="showPage('sell-stake')">List Stake for Sale</a>
+            <a href="#buy-stake-marketplace" onclick="showPage('buy-stake-marketplace')">  Market of Stakes</a>
+            <a href="#view-property-history" onclick="showPage('view-property-history')">View Property History</a>
+            
+        </nav>
+        
+        <p id="userAddress"></p>
+    </header>
+    <main>
+        <!-- List Property -->
+        <section id="list-property" class="page">
+            <h2>List Property</h2>
+            <!-- <form id="list-property-form"> -->
+                <label for="propertyId1">Property ID:</label>
+                <input type="number" id="propertyId1" name="propertyId1" required>
+                <label for="propertyLocation">Location:</label>
+                <input type="text" id="propertyLocation" name="location" required>
+                <label for="propertyPrice">Price (ETH):</label>
+                <input type="number"  id="propertyPrice" name="price" required>
+                <button onclick="listProperty()">List Property</button>
+            <!-- </form> -->
+
+            
+        </section>
+
+      
+
+        <!-- Buy Property -->
+        <section id="buy-property" class="page">
+            <h2>Buy Property</h2>
+            <div id="listed-properties"></div>
+            <form id="buy-property-form">
+                <label for="propertyId1">Property ID:</label>
+                <input type="number" id="propertyId2" name="propertyId1" required>
+                <label for="buyPropertyAmount">Amount (ETH):</label>
+                <input type="number"  id="buyPropertyAmount" name="amount" required>
+                <button onclick="buyProperty()"> Buy Property </button>
+                
+                <button onclick="viewProperty()"> Display
+                </button>
+            </form>
+            <section id="properties" class="property-container">
+               
+              </section>
+              
+        </section>
+
+
+        <!-- Sell Property -->
+        <section id="sell-property" class="page">
+            <h2>Sell Property</h2>
+            <div id="listed-properties"></div>
+            <form id="sell-property-form">
+                <label for="propertyId3">Property ID:</label>
+                <input type="number" id="propertyId3" name="propertyId3" required>
+                <label for="sellPropertyAmount">Amount (ETH):</label>
+                <input type="number"  id="sellPropertyAmount" name="amount" required>
+                <button onclick="sellProperty()">Sell Property</button>
+            </form>
+        </section>
+
+
+        <!-- Buy Stake -->
+        <section id="buy-stake" class="page">
+            <h2>Buy Stake</h2>
+            <form id="buy-stake-form">
+                <label for="stakePropertyId">Property ID:</label>
+                <input type="number" id="stakePropertyId" name="stakePropertyId" required>
+                <label for="stakePercentage">Stake Percentage:</label>
+                <input type="number"  id="stakePercentage" name="stakePercentage" required>
+                <label for="stakeAmount">Amount (ETH):</label>
+                <input type="number"  id="stakeAmount" name="stakeAmount" required>
+                <button onclick="buyStake()">Buy Stake</button>
+            </form>
+            
+        </section>
+
+        <!-- List Stake for Sale -->
+        <section id="sell-stake" class="page">
+            <h2>List Stake for Sale</h2>
+            <form id="list-stake-form">
+                <label for="listStakePropertyId">Property ID:</label>
+                <input type="number" id="listStakePropertyId" name="listStakePropertyId" required>
+                
+                <label for="listStakePrice">Price (ETH):</label>
+                <input type="number" step="0.01" id="listStakePrice" name="listStakePrice" required>
+                <button onclick="sellStake()">List Stake</button>
+            </form>
+        </section>
+
+        <!-- Buy Stake from Marketplace -->
+        <section id="buy-stake-marketplace" class="page">
+            <h2>Buy Stake from Marketplace</h2>
+            <div id="stakes-for-sale"></div>
+            <form id="buy-stake-marketplace-form">
+                <label for="buyStakeMarketplacePropertyId">Property ID:</label>
+                <input type="number" id="buyStakeMarketplacePropertyId" name="buyStakeMarketplacePropertyId" required>
+                
+                
+                <label for="buyStakeMarketplaceAmount">Amount (ETH):</label>
+                <input type="number" step="0.01" id="buyStakeMarketplaceAmount" name="buyStakeMarketplaceAmount" required>
+                <button onclick="buyStakefromMarket()">Buy Stake</button>
+            </form>
+        </section>
+
+      
+        <!-- View Property History -->
+        <section id="view-property-history" class="page">
+            <h2>View Property History</h2>
+            <form id="view-property-history-form">
+                <label for="viewPropertyHistoryId">Property ID:</label>
+                <input type="number" id="viewPropertyHistoryId" name="viewPropertyHistoryId" required>
+                <button onclick="viewPropertyHistory()">View History</button>
+            </form>
+            <div id="property-history"></div>
+
+        </section>
+
+       
+
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
